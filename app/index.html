@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FireworksSimulator</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="assets/icons/fireworks/normal.png">
+</head>
+<body>
+  <div class="columns row">
+    <div class="col-gauche col col-8">
+      <div class="section-2">
+        <canvas id="canvas" enable="false"></canvas>
+      </div>
+      <div class="sequenceur">
+        <div class="spectogramme">
+          <input type="range" min="0" max="100" value="0" id="slider">
+          <!-- <div class="image-spectogram"></div> -->
+        </div>
+        <div class="buttons"><img src="assets/icons/play.png" width="46" alt="" class="button"><img src="assets/icons/pause.png" width="46" alt="" class="button"><img src="assets/icons/stop.png" width="46" alt="" class="button"></div>
+        <div id="items-section">
+          <div id="items" tabindex="0">
+            <!-- <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" width="80" alt="" class="item-button" ID="0"> -->
+            <!-- <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" width="80" alt="" class="item-button" ID="1"> -->
+            <!-- <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" width="80" alt="" class="item-button" ID="2"> -->
+          </div>
+          <a onclick="javascript: addItem()" class="add-item">Add item</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-droite col col-4">
+      <div class="section">
+        <h1 class="heading">Configuration</h1>
+          <div class="text-block-3">
+            <span>Type de bombe</span>
+            <select name="types" class="options" id="type-select" value="roman" disabled="true">
+              <option value="normal">Normale</option>
+              <option value="multi">Tirs multiples</option>
+              <option value="fountain">Fontaine</option>
+              <option value="roman">Chandelle Romaine</option>
+              <option value="tree">Arbre</option>
+              <option value="big">Explosions multiples</option>
+              <option value="repetition">Tirs à répétition</option>
+            </select>
+          </div>
+          <div class="text-block-3">
+            <span>Position</span>
+            <input type="number" class="options" id="x" value="0" min="-20" max="20" disabled="true">
+            <span>;</span>
+            <input type="number" class="options" id="y" value="0" min="-20" max="20" disabled="true">
+            <img src="assets/icons/target.png" width="20" id="pos-pointer" enable="false" onclick="javascript: if(this.getAttribute('enable') == 'true' && canvas.getAttribute('enable') == 'false'){activePos()}else{desactivePos()}">
+          </div>
+          <div class="text-block-3">
+            <span>Delai (en tick)</span>
+            <input type="number" class="options" id="delay" min="0" step="1" value="20" disabled="true">
+          </div>
+          <div class="text-block-3">
+            <span>Duree de vie (en tick)</span>
+            <input type="number" class="options" id="lifetime" min="0" step="1" value="40" disabled="true">
+          </div>
+          <div class="text-block-3">
+            <span>Explosion(s)</span><br>
+            <textarea class="options" id="explosion" disabled="true"></textarea>
+          </div>
+          <div class="text-block-3">
+            <button onclick="javascript: deleteItem()">Supprimer</button>
+          </div>
+          <p id="error-choose">Merci de selectionner un item pour pouvoir le configurer.</p>
+          <div class="text-block-3">
+            <span>Mode d'importation</span><br>
+            <select value="normal" onchange="javascript: mode = parseInt(this.value)">
+              <option value="1">Lancement;Explosion</option>
+              <option value="2">Lancement;Duree de vie</option>
+              <option value="3">Explosion;Duree de vie</option>
+            </select>
+          </div>
+          <div class="text-block-3">
+            <textarea id="import" class="options" style="margin-top: 20px;"></textarea>
+            <button onclick="javascript: importSequenceFromClipboard()" style="margin-top: 20px;">Importer une sequence</button>
+            <button id="export" onclick="javascript: exportSequence()" style="margin-top: 20px;">Exporter la sequence</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="fileSaver.js" charset="utf-8"></script>
+  <script src="utils.js" charset="utf-8"></script>
+  <script src="obj.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+body {
+  font-family: "Minecraft";
+  src: url('./assets/fonts/Minecraft.ttf');
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.columns {
+  height: 100vh;
+}
+
+.col-droite {
+  min-height: 100vh;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.col-gauche {
+  min-height: 100vh;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  min-height: 50vh;
+  background-color: #dfe4ea;
+  -o-object-fit: fill;
+  object-fit: fill;
+  -o-object-position: 0% 0%;
+  object-position: 0% 0%;
+}
+
+.sequenceur {
+  padding-top: 10px;
+  min-height: 50vh;
+  background-color: #ced6e0;
+}
+
+.heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.section {
+  min-height: 100vh;
+  background-color: #a4b0be;
+}
+
+.option {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 10px 10px 20px;
+}
+
+.text-block-3 {
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  margin-left: -10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#items-section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.spectogramme {
+  width: 100%;
+}
+
+.image-spectogram {
+  min-height: 10px;
+  background-color: #000;
+}
+
+#items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
+  width: 500px;
+  height: 100px;
+  overflow-x: scroll;
+  overflow-y: none;
+  background-color: #70a1ff;
+  border: 2px solid #70a1ff;
+}
+
+.item-button {
+  min-width: 80px;
+  cursor: pointer;
+  image-rendering: pixelated;
+  filter: opacity(1);
+  transition: ease-out 0.2s;
+}
+
+.item-button[clicked="true"]{
+  transition: ease-in 0.2s;
+  background-color: white;
+}
+
+.add-item {
+  margin-left: 10px;
+  cursor: pointer;
+  color: blue;
+  user-select: none;
+}
+
+.section-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50vh;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-image: url('./assets/images/gray_concrete_powder.png');
+  background-position: 0px 0px;
+  background-size: 125px;
+  image-rendering: pixelated;
+}
+
+.div-block {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background-color: transparent;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+/*.background {
+  width: 100%;
+  height: 100%;
+  max-width: 40vh;
+  margin-top: auto;
+  margin-bottom: auto;
+}*/
+
+#type-select {
+  font-size: 14px;
+}
+
+input {
+  width: 100px;
+  resize: none;
+}
+
+#error-choose {
+  color: red;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#canvas {
+  width: 100%;
+  height:50vh;
+  position:relative;
+  top: 0%;
+  left: 0%;
+}
+
+#pos-pointer {
+  cursor: not-allowed;
+}
+
+#slider {
+  width: 90%;
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 10px;
+  background-color: black;
+}

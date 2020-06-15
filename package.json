@@ -1,0 +1,15 @@
+{
+  "name": "electron",
+  "version": "0.8.0",
+  "description": "Tool made for FireworksSimulator's Datapack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "_JeffWooden#0895",
+  "license": "ISC",
+  "dependencies": {
+    "electron-packager": "^14.2.1"
+  }
+}
